@@ -52,7 +52,10 @@
 <li><a class="reference external" href="#mayavi">Mayavi</a></li>
 <li><a class="reference external" href="#mac-os-x">Mac OS X</a></li>
 <li><a class="reference external" href="#windows">Windows</a></li>
-<li><a class="reference external" href="#package-install">Package Install</a></li>
+<li><a class="reference external" href="#package-install">Package Install</a><ul>
+<li><a class="reference external" href="#running-the-bleeding-edge">Running the bleeding edge</a></li>
+</ul>
+</li>
 <li><a class="reference external" href="#legacy-releases">Legacy releases</a></li>
 <li><a class="reference external" href="#source-code">Source Code</a></li>
 </ul>
@@ -162,10 +165,21 @@ in a really handy way:</p>
 neuronvisio.tgz file from <a class="reference external" href="http://pypi.python.org/pypi/neuronvisio/">Neuronvisio&#8217;s PyPI page</a>, untar it and run:</p>
 <div class="highlight-python"><pre>python setup.py install</pre>
 </div>
+<div class="section" id="running-the-bleeding-edge">
+<h3>Running the bleeding edge<a class="headerlink" href="#running-the-bleeding-edge" title="Permalink to this headline">¶</a></h3>
+<p>If you want to run the latest code you can clone the git repo and run the software from there:</p>
+<div class="highlight-python"><pre>git clone git://github.com/mattions/neuronvisio.git neuronvisio</pre>
+</div>
+<p>then you need to add the directory (the absolute path) to your PYTHONPATH (in bash):</p>
+<div class="highlight-python"><pre>export PYTHONPATH=$PYTHONPATH:/path-to-neuronvisio</pre>
+</div>
+</div>
 </div>
 <div class="section" id="legacy-releases">
 <h2>Legacy releases<a class="headerlink" href="#legacy-releases" title="Permalink to this headline">¶</a></h2>
-<p>You can find all the old Neuronvisio releases on <a class="reference external" href="http://github.com/mattions/neuronvisio/downloads">github repo</a></p>
+<p>You can find all the old Neuronvisio releases on <a class="reference external" href="http://github.com/mattions/neuronvisio/downloads">github repo</a> Note there was a major
+rewriting of the software from series 0.3 to 0.4 and the use of the old releases is not
+encouraged.</p>
 </div>
 <div class="section" id="source-code">
 <span id="source-code-section"></span><h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
@@ -206,7 +220,7 @@ management tool</p>
     </div>
     <div class="footer">
       &copy; Copyright 2009, Michele Mattioni.
-      Last updated on Mar 16, 2010.
+      Last updated on Mar 18, 2010.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
     </div>
   </body>
