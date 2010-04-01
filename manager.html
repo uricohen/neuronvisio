@@ -5,13 +5,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>neuronvisio.manager – Manage the map between vectors and sections &mdash; neuronvisio v0.4.3 documentation</title>
+    <title>neuronvisio.manager – Manage the map between vectors and sections &mdash; neuronvisio v0.4.4 documentation</title>
     <link rel="stylesheet" href="static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '#',
-        VERSION:     '0.4.3',
+        VERSION:     '0.4.4',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     </script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="neuronvisio v0.4.3 documentation" href="index.html" />
+    <link rel="top" title="neuronvisio v0.4.4 documentation" href="index.html" />
     <link rel="up" title="Reference" href="reference.html" />
     <link rel="next" title="neuronvisio.visio – 3D Visual operations" href="visio.html" />
     <link rel="prev" title="Reference" href="reference.html" /> 
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="reference.html" title="Reference"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.4.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">neuronvisio v0.4.4 documentation</a> &raquo;</li>
           <li><a href="reference.html" accesskey="U">Reference</a> &raquo;</li> 
       </ul>
     </div>
@@ -163,7 +163,7 @@ Set to None the ref for the section.</dd></dl>
 
 <dl class="method">
 <dt id="neuronvisio.manager.Manager.create_new_dir">
-<tt class="descname">create_new_dir</tt><big>(</big><em>prefix='./'</em><big>)</big><a class="headerlink" href="#neuronvisio.manager.Manager.create_new_dir" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">create_new_dir</tt><big>(</big><em>prefix='./'</em>, <em>root='Sims'</em><big>)</big><a class="headerlink" href="#neuronvisio.manager.Manager.create_new_dir" title="Permalink to this definition">¶</a></dt>
 <dd>Create the directory where to put the simulation</dd></dl>
 
 <dl class="method">
@@ -228,6 +228,11 @@ section name is used as key.</p>
 </tbody>
 </table>
 </dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.manager.Manager.load_db">
+<tt class="descname">load_db</tt><big>(</big><em>path_to_sqlite</em><big>)</big><a class="headerlink" href="#neuronvisio.manager.Manager.load_db" title="Permalink to this definition">¶</a></dt>
+<dd>Loads the database in the Neuronvisio structure</dd></dl>
 
 <dl class="method">
 <dt id="neuronvisio.manager.Manager.plotVecs">
@@ -305,15 +310,20 @@ recorded vectors.</p>
 <h2><a title="neuronvisio.manager.SynVecRef" class="reference internal" href="#neuronvisio.manager.SynVecRef"><tt class="xref docutils literal"><span class="pre">SynVecRef</span></tt></a><a class="headerlink" href="#synvecref" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="neuronvisio.manager.SynVecRef">
-<em class="property">class </em><tt class="descclassname">neuronvisio.manager.</tt><tt class="descname">SynVecRef</tt><big>(</big><em>syn</em><big>)</big><a class="headerlink" href="#neuronvisio.manager.SynVecRef" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">neuronvisio.manager.</tt><tt class="descname">SynVecRef</tt><big>(</big><em>chan_type</em>, <em>section_name</em>, <em>syn_vecs</em><big>)</big><a class="headerlink" href="#neuronvisio.manager.SynVecRef" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to track all the synapse quantity of interest</p>
-<p>Create a synVecRef object which map the synapse positiona and name 
+<p>Create a synVecRef object which map the synapse position and name 
 and the recorded vectors in it.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>syn</em> &#8211; The synapse to map</td>
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>chan_type</em> &#8211; The channel in the synapse</li>
+<li><em>sectiona_name</em> &#8211; Name of the section where the synapse is</li>
+<li><em>syn_vecs</em> &#8211; Dictionary with the synapse vecs</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -343,13 +353,13 @@ and the recorded vectors in it.</p>
         <li class="right" >
           <a href="reference.html" title="Reference"
              >previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.4.3 documentation</a> &raquo;</li>
+        <li><a href="index.html">neuronvisio v0.4.4 documentation</a> &raquo;</li>
           <li><a href="reference.html" >Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
       &copy; Copyright 2009, Michele Mattioni.
-      Last updated on Mar 18, 2010.
+      Last updated on Apr 01, 2010.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
     </div>
   </body>
