@@ -37,5 +37,5 @@ neuronvisio.visio.Visio.draw_model method visio.html
 neuronvisio.visio.Visio class visio.html
 neuronvisio.manager.SynVecRef class manager.html
 neuronvisio.controls.Controls.on_timeline_value_changed method controls.html
-neuronvisio.visio.Visio.calc_offset method visio.html
 neuronvisio.visio.Visio.update_selected_sec method visio.html
+neuronvisio.visio.Visio.calc_offset method visio.html
