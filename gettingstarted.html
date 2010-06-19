@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Getting Started &mdash; neuronvisio v0.4.4- documentation</title>
+    <title>Getting Started &mdash; neuronvisio v0.5.0 documentation</title>
     <link rel="stylesheet" href="static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.4.4-',
+        VERSION:     '0.5.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,8 +22,8 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="neuronvisio v0.4.4- documentation" href="index.html" />
-    <link rel="next" title="Screenshots" href="screenshots.html" />
+    <link rel="top" title="neuronvisio v0.5.0 documentation" href="index.html" />
+    <link rel="next" title="Saving and loading simulations’ reults" href="storage.html" />
     <link rel="prev" title="Install" href="install.html" /> 
   </head>
   <body>
@@ -37,12 +37,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="screenshots.html" title="Screenshots"
+          <a href="storage.html" title="Saving and loading simulations’ reults"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="install.html" title="Install"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.4.4- documentation</a> &raquo;</li> 
+        <li><a href="index.html">neuronvisio v0.5.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -70,12 +70,6 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#investigate-the-section-parameters">Investigate the section parameters</a></li>
-<li><a class="reference internal" href="#loading-and-saving-the-simulation-results">Loading And Saving the simulation results</a><ul>
-<li><a class="reference internal" href="#using-the-manager-object-to-store-the-results-of-your-simulation">Using the manager object to store the results of your simulation</a></li>
-<li><a class="reference internal" href="#loading-a-previous-simulation">Loading a previous simulation</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#saving-your-variables-in-storage-h5-and-use-neuronvisio-to-plot-them">Saving your variables in storage.h5 and use Neuronvisio to plot them</a></li>
 </ul>
 </li>
 </ul>
@@ -84,8 +78,8 @@
   <p class="topless"><a href="install.html"
                         title="previous chapter">Install</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="screenshots.html"
-                        title="next chapter">Screenshots</a></p>
+  <p class="topless"><a href="storage.html"
+                        title="next chapter">Saving and loading simulations&#8217; reults</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="sources/gettingstarted.txt"
@@ -212,60 +206,7 @@ many as you want, then click <cite>Plot</cite></p>
 <h2>Investigate the section parameters<a class="headerlink" href="#investigate-the-section-parameters" title="Permalink to this headline">¶</a></h2>
 <p>Select a section (Just click over it, near the beginning or the end of the cylinder)
 and the section info will be displayed in the Sec Info Tab.</p>
-<a class="reference internal image-reference" href="images/Neuronvisio_sec_info.png"><img alt="images/Neuronvisio_sec_info.png" src="images/Neuronvisio_sec_info.png" style="width: 593.3px; height: 537.2px;" /></a>
-</div>
-<div class="section" id="loading-and-saving-the-simulation-results">
-<h2>Loading And Saving the simulation results<a class="headerlink" href="#loading-and-saving-the-simulation-results" title="Permalink to this headline">¶</a></h2>
-<p>Neuronvisio stores simulation&#8217;s results using the <a class="reference external" href="http://www.hdfgroup.org/">hdf</a> standard, using <a class="reference external" href="http://www.pytables.org">PyTables</a>  This is very handy
-when you simulation takes a long time to run and you want to inspect again the results,
-without re-run it.</p>
-<p>More over, if you use the manager object to create the vectors, you can access any simulation&#8217;s
-results and explore them with Neuronvisio even of you ran it on a cluster or remote computers.</p>
-<p>To do that you need to:</p>
-<ol class="arabic simple">
-<li>Instantiate the same geometry of the model with which you have ran the simulation</li>
-<li>Load the database.</li>
-</ol>
-<div class="section" id="using-the-manager-object-to-store-the-results-of-your-simulation">
-<h3>Using the manager object to store the results of your simulation<a class="headerlink" href="#using-the-manager-object-to-store-the-results-of-your-simulation" title="Permalink to this headline">¶</a></h3>
-<p>This is a quick example how to save the simulation in neuronvisio:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Model geometry already instantiated.</span>
-<span class="c">#</span>
-<span class="kn">from</span> <span class="nn">neuronvisio.manager</span> <span class="kn">import</span> <span class="n">Manager</span>
-<span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">()</span>
-<span class="n">manager</span><span class="o">.</span><span class="n">add_all_vecRef</span><span class="p">(</span><span class="s">&#39;v&#39;</span><span class="p">)</span>
-
-<span class="c"># file where to save the results</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s">&#39;storage.h5&#39;</span>
-<span class="c"># Saving the vectors</span>
-<span class="n">manager</span><span class="o">.</span><span class="n">save_to_hdf</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>If you run a lot of simulations you want maybe to run the same script but without rewriting
-the same results. Manager has a nice method to help you called create_new_dir:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">saving_dir</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="n">create_new_dir</span><span class="p">()</span> <span class="c"># Create a new dir per Simulation, ordered by Day.</span>
-<span class="n">hdf_name</span> <span class="o">=</span> <span class="s">&#39;storage.h5&#39;</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">saving_dir</span><span class="p">,</span> <span class="n">hdf_name</span><span class="p">)</span>
-<span class="c"># Saving the vectors</span>
-<span class="n">manager</span><span class="o">.</span><span class="n">save_to_hdf</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="loading-a-previous-simulation">
-<h3>Loading a previous simulation<a class="headerlink" href="#loading-a-previous-simulation" title="Permalink to this headline">¶</a></h3>
-<p>To load the results of a simulation you can start neuronvisio giving the path_to_the_hdf_file:</p>
-<div class="highlight-python"><pre>$nrnvisio path/to/storage.h5</pre>
-</div>
-<p>or you can just start neuronvisio and use the Load button:</p>
-<div class="highlight-python"><pre>$nrnvisio</pre>
-</div>
-</div>
-</div>
-<div class="section" id="saving-your-variables-in-storage-h5-and-use-neuronvisio-to-plot-them">
-<h2>Saving your variables in storage.h5 and use Neuronvisio to plot them<a class="headerlink" href="#saving-your-variables-in-storage-h5-and-use-neuronvisio-to-plot-them" title="Permalink to this headline">¶</a></h2>
-<p>From version 0.5 is possible to save your variable in the storage.h5 and use the Neuronvisio
-Interface to plot them and get them back</p>
-<img alt="images/images" src="images/images" />
+<a class="reference internal image-reference" href="images/Neuronvisio_sec_info.png"><img alt="images/Neuronvisio_sec_info.png" src="images/Neuronvisio_sec_info.png" style="width: 742.0px; height: 619.0px;" /></a>
 </div>
 </div>
 
@@ -285,12 +226,12 @@ Interface to plot them and get them back</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="screenshots.html" title="Screenshots"
+          <a href="storage.html" title="Saving and loading simulations’ reults"
              >next</a> |</li>
         <li class="right" >
           <a href="install.html" title="Install"
              >previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.4.4- documentation</a> &raquo;</li> 
+        <li><a href="index.html">neuronvisio v0.5.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
