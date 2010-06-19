@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>neuronvisio.visio – 3D Visual operations &mdash; neuronvisio v0.4.4- documentation</title>
+    <link rel="stylesheet" href="static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.4.4-',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="neuronvisio v0.4.4- documentation" href="index.html" />
+    <link rel="up" title="Reference" href="reference.html" />
+    <link rel="next" title="neuronvisio.controls – Gtk UI module" href="controls.html" />
+    <link rel="prev" title="neuronvisio.manager – Manage the map between vectors and sections" href="manager.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="controls.html" title="neuronvisio.controls – Gtk UI module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="manager.html" title="neuronvisio.manager – Manage the map between vectors and sections"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">neuronvisio v0.4.4- documentation</a> &raquo;</li>
+          <li><a href="reference.html" accesskey="U">Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">neuronvisio.visio</span></tt> &#8211; 3D Visual operations</a><ul>
+<li><a class="reference internal" href="#visio"><tt class="docutils literal"><span class="pre">Visio</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="manager.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">neuronvisio.manager</span></tt> &#8211; Manage the map between vectors and sections</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="controls.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">neuronvisio.controls</span></tt> &#8211; Gtk UI module</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/visio.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-neuronvisio.visio">
+<span id="neuronvisio-visio-3d-visual-operations"></span><h1><a class="reference internal" href="#module-neuronvisio.visio"><tt class="xref py py-mod docutils literal"><span class="pre">neuronvisio.visio</span></tt></a> &#8211; 3D Visual operations<a class="headerlink" href="#module-neuronvisio.visio" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">synopsis:</th><td class="field-body">3D Visual operations</td>
+</tr>
+</tbody>
+</table>
+<p>Contain all the 3D operations.</p>
+<div class="section" id="visio">
+<h2><a class="reference internal" href="#neuronvisio.visio.Visio" title="neuronvisio.visio.Visio"><tt class="xref py py-class docutils literal"><span class="pre">Visio</span></tt></a><a class="headerlink" href="#visio" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="neuronvisio.visio.Visio">
+<em class="property">class </em><tt class="descclassname">neuronvisio.visio.</tt><tt class="descname">Visio</tt><big>(</big><em>default_cyl_color</em>, <em>selected_cyl_color</em>, <em>sec_info_label</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="neuronvisio.visio.Visio.calc_offset">
+<tt class="descname">calc_offset</tt><big>(</big><em>start_v</em>, <em>end_v</em>, <em>v</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.calc_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the offset for the gradient 
+according to the input variable</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.calculate_gradient">
+<tt class="descname">calculate_gradient</tt><big>(</big><em>var_value</em>, <em>start_value</em>, <em>start_col</em>, <em>end_value</em>, <em>end_col</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.calculate_gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the color in a gradient given the start and the end</p>
+<p>params:
+var_value - The value read from the vector
+start_value - the initial value for the var
+end_value - the final value for the var
+start_col - the starting color for the linear gradient
+end_col - the final color for the linear gradient</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.closeEvent">
+<tt class="descname">closeEvent</tt><big>(</big><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.closeEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just hide the window to not loose the mayavi hook</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.draw_model">
+<tt class="descname">draw_model</tt><big>(</big><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.draw_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the model.
+Params:
+controls - the main gui obj.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.draw_section">
+<tt class="descname">draw_section</tt><big>(</big><em>sec</em>, <em>color</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.draw_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the section with the optional color 
+and add it to the dictionary cyl2sec</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sec</strong> &#8211; Section to draw</li>
+<li><strong>color</strong> &#8211; tuple for the color in RGB value. i.e.: (0,0,1) blue</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.get_sec_info">
+<tt class="descname">get_sec_info</tt><big>(</big><em>section</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.get_sec_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the info of the given section</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.picker_callback">
+<tt class="descname">picker_callback</tt><big>(</big><em>picker</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.picker_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Picker callback: this get called when on pick events.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.retrieve_coordinate">
+<tt class="descname">retrieve_coordinate</tt><big>(</big><em>sec</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.retrieve_coordinate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the coordinates of the section</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.show_variable_timecourse">
+<tt class="descname">show_variable_timecourse</tt><big>(</big><em>var</em>, <em>time_point</em>, <em>start_value</em>, <em>start_col</em>, <em>end_value</em>, <em>end_col</em>, <em>vecRefs</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.show_variable_timecourse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show an animation of all the section that have 
+the recorded variable among time</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.update_def_sec">
+<tt class="descname">update_def_sec</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.update_def_sec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the default color of all cyls</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neuronvisio.visio.Visio.update_selected_sec">
+<tt class="descname">update_selected_sec</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#neuronvisio.visio.Visio.update_selected_sec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the color of the select section</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="controls.html" title="neuronvisio.controls – Gtk UI module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="manager.html" title="neuronvisio.manager – Manage the map between vectors and sections"
+             >previous</a> |</li>
+        <li><a href="index.html">neuronvisio v0.4.4- documentation</a> &raquo;</li>
+          <li><a href="reference.html" >Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009, Michele Mattioni.
+      Last updated on Jun 19, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b2.
+    </div>
+  </body>
+</html>
