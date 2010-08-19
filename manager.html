@@ -111,7 +111,7 @@
 and retrieve the information</p>
 <dl class="method">
 <dt id="neuronvisio.manager.Manager.add_all_vecRef">
-<tt class="descname">add_all_vecRef</tt><big>(</big><em>var</em><big>)</big><a class="headerlink" href="#neuronvisio.manager.Manager.add_all_vecRef" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">add_all_vecRef</tt><big>(</big><em>var</em>, <em>time_interval_recording=None</em><big>)</big><a class="headerlink" href="#neuronvisio.manager.Manager.add_all_vecRef" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the vector for all the section present in the model 
 with the given variable
 :param var: The variable to record</p>
@@ -148,24 +148,25 @@ plotted from the Neuronvisio UI.</p>
 
 <dl class="method">
 <dt id="neuronvisio.manager.Manager.add_vecRef">
-<tt class="descname">add_vecRef</tt><big>(</big><em>var</em>, <em>sec</em><big>)</big><a class="headerlink" href="#neuronvisio.manager.Manager.add_vecRef" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">add_vecRef</tt><big>(</big><em>var</em>, <em>sec</em>, <em>time_interval_recording=None</em><big>)</big><a class="headerlink" href="#neuronvisio.manager.Manager.add_vecRef" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add the vecRef to the vec_res list. It takes care to create the vector 
 and record the given variable.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>var</strong> &#8211; The variable to record</li>
 <li><strong>sec</strong> &#8211; The section where to record</li>
+<li><strong>resolution</strong> &#8211; If None, use the dt of Neuron. Specify which interval</li>
 </ul>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True if the vector is created successfully.</p>
 </td>
 </tr>
 </tbody>
 </table>
+<p>to use to record the vectors. Note the same resolution shoul apply to the 
+time vectors.
+:return: True if the vector is created successfully.</p>
 </dd></dl>
 
 <dl class="method">
@@ -396,7 +397,7 @@ and the recorded vectors in it.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2009, Michele Mattioni.
-      Last updated on Jun 23, 2010.
+      Last updated on Aug 19, 2010.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b2.
     </div>
   </body>
