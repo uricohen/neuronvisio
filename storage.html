@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Saving and loading simulations’ reults &mdash; neuronvisio v0.5.0 documentation</title>
+    <title>Saving and loading simulations’ reults &mdash; neuronvisio v0.5.1 documentation</title>
     <link rel="stylesheet" href="static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.0',
+        VERSION:     '0.5.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,7 +22,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="neuronvisio v0.5.0 documentation" href="index.html" />
+    <link rel="top" title="neuronvisio v0.5.1 documentation" href="index.html" />
     <link rel="next" title="Screenshots" href="screenshots.html" />
     <link rel="prev" title="Getting Started" href="gettingstarted.html" /> 
   </head>
@@ -42,7 +42,7 @@
         <li class="right" >
           <a href="gettingstarted.html" title="Getting Started"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.5.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">neuronvisio v0.5.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -140,7 +140,10 @@ the same results. Manager has a nice method to help you called create_new_dir:</
 </div>
 <div class="section" id="saving-your-variables-in-storage-h5-and-use-neuronvisio-to-plot-them">
 <h2>Saving your variables in storage.h5 and use Neuronvisio to plot them<a class="headerlink" href="#saving-your-variables-in-storage-h5-and-use-neuronvisio-to-plot-them" title="Permalink to this headline">¶</a></h2>
-<p>To be able to save your own variable you need to subclass the BaseRef and then add the to the manager.</p>
+<p>The <cite>BaseRef</cite> can be used to store computational results which are not in NEURON
+vectors format. Every BaseRef object is contained in a group, which is specified
+by the <cite>group_id</cite> attribute. The group_id is than used by Neuronvisio to pair the
+saved vectors with the time vectors which is required to plot.</p>
 <p>To subclass the BaseRef just create a class:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">neuronvisio.manager</span> <span class="kn">import</span> <span class="n">BaseRef</span>
 
@@ -149,6 +152,7 @@ the same results. Manager has a nice method to help you called create_new_dir:</
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sec_name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vecs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
 
         <span class="n">BaseRef</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">group_id</span> <span class="o">=</span> <span class="s">&#39;MyGroup&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sec_name</span> <span class="o">=</span> <span class="n">sec_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vecs</span> <span class="o">=</span> <span class="n">vecs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">detail</span> <span class="o">=</span> <span class="n">detail</span>
@@ -160,17 +164,21 @@ the same results. Manager has a nice method to help you called create_new_dir:</
               <span class="n">detail</span><span class="o">=</span><span class="n">detail</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>sec_name should be the name of the section, vecs is a dictionary with the variable name as key and a
-python_list as value. A numpy array or an HocVector is also accepted.</p>
-<p>After that you can add to the manager using the <cite>manager.add_ref</cite> which takes two arg:</p>
+<p><cite>sec_name</cite> should be the name of the section where the variable is been recorded,
+vecs is a dictionary with the variable name as key and the python_list with the
+computed value. A numpy array or an HocVector is also accepted.</p>
+<p>After that you can add to the manager using the <cite>manager.add_ref</cite> which takes two
+arguments:</p>
 <blockquote>
 <ul class="simple">
 <li>the myRef object</li>
 <li>the x variable.</li>
 </ul>
 </blockquote>
-<p>The x variable is the independent one which will be used to plot the from the Neuronvisio graphical interface. If you don&#8217;t have
-a time to supply, but you want to use the one from NEURON directly, you can use the <cite>manager.groups[&#8216;t&#8217;]</cite> which will return an array:</p>
+<p>The x variable is the independent one, usually the time, which will be used to plot the from the
+Neuronvisio graphical interface. If don&#8217;t need to supply your own time vector, because is the
+same of the main NEURON one, you can use the <cite>manager.groups[&#8216;t&#8217;]</cite> which will return the
+NEURON time array:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">manager</span><span class="o">.</span><span class="n">add_ref</span><span class="p">(</span><span class="n">timeseriesRef</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -191,7 +199,7 @@ a time to supply, but you want to use the one from NEURON directly, you can use 
 <span class="n">manager</span><span class="o">.</span><span class="n">add_ref</span><span class="p">(</span><span class="n">myRef</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Then you just need to save the file normally:</p>
+<p>Then you just need to save the file where is more convenient for you:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">filename</span> <span class="o">=</span> <span class="s">&#39;storage.h5&#39;</span>
 <span class="c"># Saving the vectors</span>
 <span class="n">manager</span><span class="o">.</span><span class="n">save_to_hdf</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -223,12 +231,12 @@ a time to supply, but you want to use the one from NEURON directly, you can use 
         <li class="right" >
           <a href="gettingstarted.html" title="Getting Started"
              >previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.5.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">neuronvisio v0.5.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2009, Michele Mattioni.
-      Last updated on Aug 19, 2010.
+      Last updated on Nov 23, 2010.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b2.
     </div>
   </body>
