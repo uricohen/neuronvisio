@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Changes in Neuronvisio &mdash; neuronvisio v0.5.2 documentation</title>
+    <title>Changes in Neuronvisio &mdash; neuronvisio v0.6.0 documentation</title>
     <link rel="stylesheet" href="static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.2',
+        VERSION:     '0.6.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,7 +22,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="neuronvisio v0.5.2 documentation" href="index.html" />
+    <link rel="top" title="neuronvisio v0.6.0 documentation" href="index.html" />
     <link rel="prev" title="neuronvisio.controls – User Interface module" href="controls.html" /> 
   </head>
   <body>
@@ -33,9 +33,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="controls.html" title="neuronvisio.controls – User Interface module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.5.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html">neuronvisio v0.6.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -43,6 +46,7 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Changes in Neuronvisio</a><ul>
+<li><a class="reference internal" href="#may-2011">0.6.0 &#8211; 10 May 2011</a></li>
 <li><a class="reference internal" href="#jan-2011">0.5.2 &#8211; 26 Jan 2011</a></li>
 <li><a class="reference internal" href="#nov-2010">0.5.1 - 23 Nov 2010</a></li>
 <li><a class="reference internal" href="#jun-2010">0.5.0 - 19 Jun 2010</a></li>
@@ -107,6 +111,20 @@
             
   <div class="section" id="changes-in-neuronvisio">
 <h1>Changes in Neuronvisio<a class="headerlink" href="#changes-in-neuronvisio" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="may-2011">
+<h2>0.6.0 &#8211; 10 May 2011<a class="headerlink" href="#may-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added the function to plot a 3D plot to the manager (manager.plot3D)</li>
+<li>Animation can will be enabled if any simulation is ran, either from the gui
+or the code.</li>
+<li>Completely rewrote the visualization method. Now completely integrates in the mayavi pipelines,
+therefore axes and other modules/filters can be added at will</li>
+<li>Now it&#8217;s faster. A lot faster</li>
+<li>All the segments are plotted, not only the section. This is extremely helpful with geometrical reconstruct
+neurons and networks.</li>
+<li>Updated the docs and the screenshots.</li>
+</ul>
+</div>
 <div class="section" id="jan-2011">
 <h2>0.5.2 &#8211; 26 Jan 2011<a class="headerlink" href="#jan-2011" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -289,15 +307,18 @@ completely, the zoom is conserved.</li>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="controls.html" title="neuronvisio.controls – User Interface module"
              >previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.5.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html">neuronvisio v0.6.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2009, Michele Mattioni.
-      Last updated on Jan 26, 2011.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b2.
+      Last updated on May 10, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
     </div>
   </body>
 </html>
