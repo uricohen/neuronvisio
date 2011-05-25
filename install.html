@@ -108,13 +108,15 @@
 <li>mayavi2: <a class="reference external" href="http://code.enthought.com/projects/mayavi/">http://code.enthought.com/projects/mayavi/</a> 3.3.1 (or better)</li>
 <li>matplotlib: <a class="reference external" href="http://matplotlib.sourceforge.net/">http://matplotlib.sourceforge.net/</a></li>
 <li>setuptools: <a class="reference external" href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</a></li>
+<li>pytables: <a class="reference external" href="http://www.pytables.org/">http://www.pytables.org/</a></li>
 </ul>
 <p>and of course <a class="reference external" href="http://www.neuron.yale.edu/neuron/">NEURON</a>. compiled with python support</p>
 </div>
 <div class="section" id="ubuntu-and-friends">
 <h2>Ubuntu and friends<a class="headerlink" href="#ubuntu-and-friends" title="Permalink to this headline">¶</a></h2>
 <p>On Ubuntu you can easily install all the requirements using apt-get with:</p>
-<div class="highlight-python"><pre>sudo apt-get install python-qt4 ipython python-matplotlib python-setuptools</pre>
+<div class="highlight-python"><pre>sudo apt-get install python-qt4 ipython python-matplotlib \
+python-setuptools python-tables</pre>
 </div>
 <p>If you are running a different flavour of GNU/Linux, like Fedora for example, just install
 the requirements with your package manager, then go to the <a class="reference external" href="#package-install">Package Install</a>.</p>
@@ -130,6 +132,10 @@ the requirements with your package manager, then go to the <a class="reference e
 <p>If you want to use another method for installation look at the <a class="reference external" href="http://code.enthought.com/projects/mayavi/docs/development/html/mayavi/installation.html">Mayavi doc</a></p>
 <p>On Ubuntu you will need to install manually these two modules: <cite>python-vtk python-configobj</cite>:</p>
 <div class="highlight-python"><pre>sudo apt-get install python-vtk python-configobj</pre>
+</div>
+<p>Make sure the TraitsBackendQt (<a class="reference external" href="http://pypi.python.org/pypi/TraitsBackendQt">http://pypi.python.org/pypi/TraitsBackendQt</a>)
+has been installed as well. To install it run:</p>
+<div class="highlight-python"><pre>pip install TraitsBackendQt</pre>
 </div>
 </div>
 <div class="section" id="mac-os-x">
