@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Changes in Neuronvisio &mdash; neuronvisio v0.6.1 documentation</title>
+    <title>Changes in Neuronvisio &mdash; neuronvisio v0.6.2 documentation</title>
     <link rel="stylesheet" href="static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.6.1',
+        VERSION:     '0.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,7 +22,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="neuronvisio v0.6.1 documentation" href="index.html" />
+    <link rel="top" title="neuronvisio v0.6.2 documentation" href="index.html" />
     <link rel="prev" title="neuronvisio.controls – User Interface module" href="controls.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
         <li class="right" >
           <a href="controls.html" title="neuronvisio.controls – User Interface module"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.6.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">neuronvisio v0.6.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -46,7 +46,8 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Changes in Neuronvisio</a><ul>
-<li><a class="reference internal" href="#jun-2011">0.6.1 &#8211; 9 Jun 2011</a></li>
+<li><a class="reference internal" href="#jun-2011">0.6.2 &#8211; 16 Jun 2011</a></li>
+<li><a class="reference internal" href="#id1">0.6.1 &#8211; 9 Jun 2011</a></li>
 <li><a class="reference internal" href="#may-2011">0.6.0 &#8211; 10 May 2011</a></li>
 <li><a class="reference internal" href="#jan-2011">0.5.2 &#8211; 26 Jan 2011</a></li>
 <li><a class="reference internal" href="#nov-2010">0.5.1 - 23 Nov 2010</a></li>
@@ -55,22 +56,22 @@
 <li><a class="reference internal" href="#mar-2010">0.4.3 - 2 Mar 2010</a></li>
 <li><a class="reference internal" href="#feb-2010">0.4.2 - 18 Feb 2010</a></li>
 <li><a class="reference internal" href="#jan-2010">0.4.1 - 28 Jan 2010</a></li>
-<li><a class="reference internal" href="#id1">0.4.0 - 19 Jan 2010</a></li>
+<li><a class="reference internal" href="#id2">0.4.0 - 19 Jan 2010</a></li>
 <li><a class="reference internal" href="#nov-2009">0.3.5 - 20 Nov 2009</a></li>
 <li><a class="reference internal" href="#sep-2009">0.3.4 - 15 Sep 2009</a></li>
-<li><a class="reference internal" href="#id2">0.3.3 - 3 Sep 2009</a></li>
+<li><a class="reference internal" href="#id3">0.3.3 - 3 Sep 2009</a></li>
 <li><a class="reference internal" href="#jul-2009">0.3.22 - 31 Jul 2009</a></li>
-<li><a class="reference internal" href="#id3">0.3.21 - 20 Jul 2009</a></li>
-<li><a class="reference internal" href="#id4">0.3.2 - 20 Jul 2009</a></li>
-<li><a class="reference internal" href="#id5">0.3.1 - 18 Jul 2009</a></li>
-<li><a class="reference internal" href="#id6">0.3.0 - 14 Jul 2009</a><ul>
+<li><a class="reference internal" href="#id4">0.3.21 - 20 Jul 2009</a></li>
+<li><a class="reference internal" href="#id5">0.3.2 - 20 Jul 2009</a></li>
+<li><a class="reference internal" href="#id6">0.3.1 - 18 Jul 2009</a></li>
+<li><a class="reference internal" href="#id7">0.3.0 - 14 Jul 2009</a><ul>
 <li><a class="reference internal" href="#new-features">New Features</a></li>
 <li><a class="reference internal" href="#bugfixes">BUGFixes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id7">0.2.0 - 6 Jul 2009</a><ul>
-<li><a class="reference internal" href="#id8">New Features</a></li>
-<li><a class="reference internal" href="#id9">BUGFixes</a></li>
+<li><a class="reference internal" href="#id8">0.2.0 - 6 Jul 2009</a><ul>
+<li><a class="reference internal" href="#id9">New Features</a></li>
+<li><a class="reference internal" href="#id10">BUGFixes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#jun-2009">0.1.0 - 30 Jun 2009</a><ul>
@@ -113,7 +114,16 @@
   <div class="section" id="changes-in-neuronvisio">
 <h1>Changes in Neuronvisio<a class="headerlink" href="#changes-in-neuronvisio" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="jun-2011">
-<h2>0.6.1 &#8211; 9 Jun 2011<a class="headerlink" href="#jun-2011" title="Permalink to this headline">¶</a></h2>
+<h2>0.6.2 &#8211; 16 Jun 2011<a class="headerlink" href="#jun-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>New API to select sections directly from the commandline
+(<cite>controls.select_sections()</cite>)</li>
+<li>Animation Timeliner set up only if simulation has ran or be
+reloaded.</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>0.6.1 &#8211; 9 Jun 2011<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Animation ported to the new infrastructure.</li>
 <li>Updated the requirements with setuptools (needed for paver)</li>
@@ -193,8 +203,8 @@ class base.</li>
 <li>Introduced a tab to retrieve info on the section</li>
 </ul>
 </div>
-<div class="section" id="id1">
-<h2>0.4.0 - 19 Jan 2010<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>0.4.0 - 19 Jan 2010<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Remplemented using Mayavi2 and Qt4 for better performance and better usability.</li>
 <li>Cleanup and refactoring of the code.</li>
@@ -217,8 +227,8 @@ class base.</li>
 as a storing objects for results.</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>0.3.3 - 3 Sep 2009<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>0.3.3 - 3 Sep 2009<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Integrated the pylab interface using the GTK backend provided by pylab.
 It is possible to zoom and navigate the graph with the pylab tools.</li>
@@ -234,8 +244,8 @@ standard compliant.</li>
 <li>Manager being transformed into a library (WIP)</li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h2>0.3.21 - 20 Jul 2009<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>0.3.21 - 20 Jul 2009<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Better handling of the pick section routine</li>
 <li>Changed the examples to use the create statement for hoc, to have
@@ -244,16 +254,16 @@ a proper name of the section also in python.</li>
 completely, the zoom is conserved.</li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>0.3.2 - 20 Jul 2009<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>0.3.2 - 20 Jul 2009<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>Bug Release. Closed Bug #9</p>
 </div>
-<div class="section" id="id5">
-<h2>0.3.1 - 18 Jul 2009<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>0.3.1 - 18 Jul 2009<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>Bug Release.</p>
 </div>
-<div class="section" id="id6">
-<h2>0.3.0 - 14 Jul 2009<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>0.3.0 - 14 Jul 2009<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="new-features">
 <h3>New Features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -269,18 +279,18 @@ completely, the zoom is conserved.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>0.2.0 - 6 Jul 2009<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id8">
-<h3>New Features<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h2>0.2.0 - 6 Jul 2009<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>New Features<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>Some new features has been introduced:</p>
 <ul class="simple">
 <li>User defined color. The user can now change the colors of the model for a better contrast.</li>
 <li>Info tab. Reports the properties of the selected section.</li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h3>BUGFixes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>BUGFixes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Closed bug #4</li>
 <li>Closed bug #5</li>
@@ -322,12 +332,12 @@ completely, the zoom is conserved.</li>
         <li class="right" >
           <a href="controls.html" title="neuronvisio.controls – User Interface module"
              >previous</a> |</li>
-        <li><a href="index.html">neuronvisio v0.6.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">neuronvisio v0.6.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2009, Michele Mattioni.
-      Last updated on Jun 09, 2011.
+      Last updated on Jun 16, 2011.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
     </div>
   </body>
